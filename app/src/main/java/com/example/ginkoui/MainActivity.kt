@@ -53,7 +53,7 @@ HomeScreen()
 fun HomeScreen(){
     Scaffold (
         bottomBar = {
-
+BottomNavigationBar()
         }
     ){ padding ->
         Column (
