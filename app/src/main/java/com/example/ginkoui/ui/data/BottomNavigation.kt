@@ -1,4 +1,8 @@
 package com.example.ginkoui.ui.data
 
-class BottomNavigation {
-}
+import androidx.compose.ui.graphics.vector.ImageVector
+
+data class BottomNavigation (
+    val title : String,
+    val icon : ImageVector
+)
