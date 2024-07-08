@@ -57,18 +57,21 @@ fun HomeScreen() {
             BottomNavigationBar()
         }
     ) { padding ->
+
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
         ) {
+
             Wallet()
-            Spacer(modifier = Modifier.height(16.dp))
             CardsSection()
             Spacer(modifier = Modifier.height(16.dp))
             FinanceSection()
-            //Currencies
+            CurrenciesSection()
         }
+
+
     }
 }
 
