@@ -81,6 +81,7 @@ fun getGradient(
 @Preview
 @Composable
 fun CardsSection() {
+    //recycle item in horizontally
     LazyRow {
         items(cards.size) { index ->
             CardItem(index)

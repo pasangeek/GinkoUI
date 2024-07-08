@@ -26,13 +26,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             GinkoUITheme {
                 // A surface container using the 'background' color from the theme
-SetBarColor(color = MaterialTheme.colorScheme.background)
+                SetBarColor(color = MaterialTheme.colorScheme.background)
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
 
-HomeScreen()
+                    HomeScreen()
                 }
             }
         }
@@ -48,25 +48,29 @@ HomeScreen()
 
     }
 }
+
 @Preview
 @Composable
-fun HomeScreen(){
-    Scaffold (
+fun HomeScreen() {
+    Scaffold(
         bottomBar = {
-BottomNavigationBar()
+            BottomNavigationBar()
         }
-    ){ padding ->
-        Column (
+    ) { padding ->
+        Column(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
-        ){
-//Wallet
-        //Cards
-        Spacer(modifier = Modifier.height(16.dp))
-        //Finance
-        //Currencies
-    }    }    }
+        ) {
+            Wallet()
+            CardsSection()
+            //Cards
+            Spacer(modifier = Modifier.height(16.dp))
+            //Finance
+            //Currencies
+        }
+    }
+}
 
 
 
