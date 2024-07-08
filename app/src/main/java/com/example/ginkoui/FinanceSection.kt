@@ -1,5 +1,15 @@
 package com.example.ginkoui
 
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.rounded.MonetizationOn
+import androidx.compose.material.icons.rounded.StarHalf
+import androidx.compose.material.icons.rounded.Wallet
+import com.example.ginkoui.ui.data.Finance
+import com.example.ginkoui.ui.theme.BlueStart
+import com.example.ginkoui.ui.theme.GreenStart
+import com.example.ginkoui.ui.theme.OrangeStart
+import com.example.ginkoui.ui.theme.PurpleStart
+
 val financeList = listOf(
     Finance(
         icon = Icons.Rounded.StarHalf,
