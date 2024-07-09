@@ -8,11 +8,16 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
+import androidx.compose.runtime.derivedStateOf
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
@@ -52,23 +57,42 @@ class MainActivity : ComponentActivity() {
 @Preview
 @Composable
 fun HomeScreen() {
+    val listState = rememberLazyListState()
+    val isVisible by remember {
+        derivedStateOf {
+            listState.firstVisibleItemScrollOffset == 0
+        }
+    }
     Scaffold(
         bottomBar = {
-            BottomNavigationBar()
+            if (isVisible) {
+                BottomNavigationBar()
+            }
         }
     ) { padding ->
 
-        Column(
+        LazyColumn(
+            state = listState,
             modifier = Modifier
                 .fillMaxSize()
                 .padding(padding)
         ) {
 
-            Wallet()
-            CardsSection()
-            Spacer(modifier = Modifier.height(16.dp))
-            FinanceSection()
-            CurrenciesSection()
+            item {
+                Wallet()
+            }
+            item {
+                CardsSection()
+            }
+            item {
+                Spacer(modifier = Modifier.height(16.dp))
+            }
+            item {
+                FinanceSection()
+            }
+            item {
+                CurrenciesSection()
+            }
         }
 
 
